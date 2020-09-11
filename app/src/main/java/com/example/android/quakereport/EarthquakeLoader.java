@@ -16,7 +16,7 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
     private static final String LOG_TAG = EarthquakeLoader.class.getSimpleName();
 
     /** Query URL */
-    private String url;
+    private String murl;
 
     /**
      * Constructs a new {@link EarthquakeLoader}.
@@ -26,7 +26,7 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
      */
     public EarthquakeLoader(Context context, String url) {
         super(context);
-        url = url;
+        murl = url;
     }
 
     @Override
@@ -43,11 +43,11 @@ public class EarthquakeLoader extends AsyncTaskLoader<List<Earthquake>> {
     public List<Earthquake> loadInBackground() {
 
         Log.v(LOG_TAG,"loadInBackground");
-        if(url == null)
+        if(murl == null)
             return null;
 
         // Perform the network request, parse the response, and extract a list of earthquakes.
-        List<Earthquake> earthquakes = QueryUtils.fetchEarthquakeData(url);
+        List<Earthquake> earthquakes = QueryUtils.fetchEarthquakeData(murl);
         return earthquakes;
 
 

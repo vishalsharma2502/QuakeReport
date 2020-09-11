@@ -118,7 +118,6 @@ public class EarthquakeAdapter extends ArrayAdapter {
         return ContextCompat.getColor(getContext(), magnitudeColorResourceId);
     }
 
-
     /**
      * Return the formatted date string (i.e. "Mar 3, 1984") from a Date object.
      */
